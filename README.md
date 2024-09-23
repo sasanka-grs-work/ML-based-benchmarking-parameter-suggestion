@@ -65,3 +65,28 @@ These different approaches ensure that the system can handle a variety of input 
 ## Conclusion
 
 The **Adaptive Workload Parameter Suggestion System** leverages machine learning to optimize stress tests by exploring untested parameter combinations. It reduces the manual effort required for tuning and ensures that workloads run with maximum efficiency across a variety of architectures and configurations.
+
+## Running the Model
+
+### Dependencies
+
+Running the model requires
+
+1. Tensorflow - pip install tensorflow-gpu==2.10.0
+2. Numpy - pip install numpy
+3. Scikit-learn - pip install scikit-learn
+4. cudNN - https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local
+
+### Execution
+
+python3 genetic_algorithm.py
+python3 gradient_ascent.py
+
+### Save model parameters for future use
+
+model.save('genetic_algorithm_model.h5')
+model.save('gradient_ascent_model.h5')
+
+### Load the saved model
+
+model = keras.models.load_model('genetic_algorithm_model.h5')
